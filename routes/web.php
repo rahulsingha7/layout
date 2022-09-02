@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\WebsiteController;
@@ -59,3 +60,8 @@ Route::get('notfoundpages',[AdminController::class,'notfoundpages']);
 Route::get('blankpage',[AdminController::class,'blankpage']);
 Route::get('chart',[AdminController::class,'chart']);
 Route::get('table',[AdminController::class,'table']);
+Route::get('login',[AuthController::class,'login']);
+Route::get('register',[AuthController::class,'register']);
+Route::post('store-register',[AuthController::class,'storeRegister']);
+Route::post('store-login',[AuthController::class,'storeLogin']);
+Route::get('dashboard',[AuthController::class,'dashboard']);
