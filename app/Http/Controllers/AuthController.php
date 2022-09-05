@@ -57,4 +57,15 @@ class AuthController extends Controller
     public function dashboard(){
         return view('auth.dashboard');
     }
+    public function users(){
+        $users = User::all();
+        return view('auth.users',compact('users'));
+    }
+    public function approve($id){
+         $user= User::find($id);//SELECT * from users where id =1
+         $user->active=1;
+         if($user->save()){
+            return redirect('users');
+         }
+    }
 }

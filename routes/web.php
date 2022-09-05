@@ -65,3 +65,15 @@ Route::get('register',[AuthController::class,'register']);
 Route::post('store-register',[AuthController::class,'storeRegister']);
 Route::post('store-login',[AuthController::class,'storeLogin']);
 Route::get('dashboard',[AuthController::class,'dashboard']);
+Route::get('users',[AuthController::class,'users']);
+Route::get('approve/{id}',[AuthController::class,'approve']);
+
+Route::middleware(['CheckLogin'])->group(function () {
+  Route::get('dashboard',[AuthController::class,'dashboard']);
+  Route::get('users',[AuthController::class,'users']);
+  Route::get('approve/{id}',[AuthController::class,'approve']);
+});
+Route::middleware(['IsAdmin'])->group(function () {
+  Route::get('users',[AuthController::class,'users']);
+  Route::get('approve/{id}',[AuthController::class,'approve']);
+});
