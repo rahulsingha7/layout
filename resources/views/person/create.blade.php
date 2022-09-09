@@ -40,6 +40,44 @@
                 <input type="number" name="salary" class="form-control">
             </div>
             <div class="form-group">
+            <label for="">Status</label>
+              <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="status" value="1">Active
+                </label>
+               </div>
+            </div>
+            <div class="form-group">
+             <label for="">Gender</label>
+             <br>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="gender" value="male">Male
+                        <input type="radio" class="form-check-input" name="gender" value="female">Female
+                        <input type="radio" class="form-check-input" name="gender" value="other">Other
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Choose Your Hobby</label>
+                <br>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="hobby[]" value="Reading">Reading books
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="hobby[]" value="Tv">Watching Tv
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="hobby[]" value="Football" >Football
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
                 <button type="submit" class="btn btn-dark">Save</button>
             </div>
         </form>

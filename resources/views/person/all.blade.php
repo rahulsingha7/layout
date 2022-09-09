@@ -20,6 +20,8 @@
                 <th>City</th >
                 <th>Birth Date</th>
                 <th>Salary</th>
+                <th>Gender</th>
+                <th>Hobby</th>
             </thead>
             <tbody>
                 @foreach($persons as $p)
@@ -29,6 +31,15 @@
                     <td>{{$p->city}}</td>
                     <td>{{$p->birth_date}}</td>
                     <td>{{$p->salary}}</td>
+                    <td>{{$p->status==1?'Active':'Inactive'}}</td>
+                    <td>{{$p->gender}}</td>
+                    <td>@php
+                        $hobby=json_decode($p->hobby);
+                        @endphp
+                        @foreach($hobby as $h)
+                        <span class="badge badge-primary">{{$h}}</span>
+                        @endforeach
+                    </td>
                     <td>
                         <a class="btn btn-primary" href="{{ url('edit-person/'.$p->id) }}">Edit</a>
                         <a class="btn btn-danger" data-toggle="modal" data-target="#myModal{{ $p->id }}">Delete</a>
