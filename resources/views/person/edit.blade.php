@@ -1,3 +1,7 @@
+@php
+    $hobby = json_decode($person->hobby);
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
