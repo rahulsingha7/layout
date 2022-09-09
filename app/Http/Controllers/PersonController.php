@@ -15,12 +15,22 @@ class PersonController extends Controller
         $city = $req->city;
         $dob = $req->dob;
         $salary = $req->salary;
+        $status = $req->status;
+        function status_check($value){
+            return $value == '1'? 1:0;
+        }
+        $data = status_check($status);
+        $gender = $req->gender;
+        $hobby = json_encode($req->hobby);
         DB::table('persons')->insert([
             'name' => $name,
             'email' => $email,
             'city' => $city,
             'birth_date' => $dob,
-            'salary' => $salary
+            'salary' => $salary,
+            'status' => $data,
+            'gender' => $gender,
+            'hobby' => $hobby,
         ]);
         return redirect('persons');
     }
@@ -38,12 +48,22 @@ class PersonController extends Controller
         $city = $req->city;
         $dob = $req->dob;
         $salary = $req->salary;
+        $status = $req->status;
+        function active_status_check($value){
+            return $value == '1'? 1:0;
+        }
+        $data = active_status_check($status);
+        $gender = $req->gender;
+        $hobby = json_encode($req->hobby);
         DB::table('persons')->where('id','=',$id)->update([
             'name' => $name,
             'email' => $email,
             'city' => $city,
             'birth_date' => $dob,
-            'salary' => $salary
+            'salary' => $salary,
+            'status' => $data,
+            'gender' => $gender,
+            'hobby' => $hobby,
         ]);
         return redirect('persons');
     }

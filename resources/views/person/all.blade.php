@@ -20,6 +20,7 @@
                 <th>City</th >
                 <th>Birth Date</th>
                 <th>Salary</th>
+                <th>Status</th>
                 <th>Gender</th>
                 <th>Hobby</th>
             </thead>
